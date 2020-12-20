@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Header.css";
+import { AuthenticationContext } from "./AuthenticationContext";
 import SearchIcon from "@material-ui/icons/Search";
 import LanguageIcon from "@material-ui/icons/Language";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
@@ -7,6 +8,8 @@ import { Avatar } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
 function Header() {
+  const { handleLogout } = useContext(AuthenticationContext);
+
   return (
     <div className="header">
       <Link to="/">
@@ -24,9 +27,10 @@ function Header() {
 
       <div className="header__right">
         <p>Become a host</p>
-        <LanguageIcon />
-        <ExpandMoreIcon />
-        <Avatar />
+        {/* <LanguageIcon /> */}
+        {/* <ExpandMoreIcon /> */}
+        {/* <Avatar /> */}
+        <button onClick={handleLogout}>Log out</button>
       </div>
     </div>
   );

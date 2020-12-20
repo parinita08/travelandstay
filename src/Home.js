@@ -47,7 +47,7 @@ function Home() {
           description="Superhost with great amenities and a fabolous shopping complex nearby"
           price="₹700/night"
         />
-        <button onClick={handleLogout}>Log out</button>
+        {/* <button onClick={handleLogout}>Log out</button> */}
       </div>
     </div>
   );
