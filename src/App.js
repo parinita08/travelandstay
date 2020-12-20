@@ -1,51 +1,31 @@
-import React from 'react';
-import './App.css';
-import Home from './Home'
-import Header from './Header'
-import Footer from './Footer'
-import SearchPage from './SearchPage'
-import Authentication from './Authentication';
-import Login from './Login';
-
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React, { useContext } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { AuthenticationContext } from "./AuthenticationContext";
+import Home from "./Home";
+import Login from "./Login";
+import Header from "./Header";
+import Footer from "./Footer";
+import SearchPage from "./SearchPage";
+import "./App.css";
 
 function App() {
+  const { user } = useContext(AuthenticationContext);
+
   return (
-
-    // BEM
-    <div className="app">
-      {/* <Router>
-        <Header />
-        
-        <Switch>
-            <Route path="/search">
-              <SearchPage />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-        </Switch>
-        
-        <Footer />
-      </ Router> */}
-
-      {user ? (
-        <Home handleLogout={handleLogout} />
-      ) : (
-        <Login 
-          email={email} 
-          setEmail={setEmail} 
-          password={password} 
-          setPassword={setPassword} 
-          handleLogin={handleLogin} 
-          handleSignup={handleSignup} 
-          hasAccount={hasAccount} 
-          setHasAccount={setHasAccount} 
-          emailError={emailError} 
-          passwordError={passwordError} 
-        />
-      )}
-    </div>
+    <Router>
+      <div className="app">
+        {user ? (
+          <>
+            <Header />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/search" component={SearchPage} />
+            <Footer />
+          </>
+        ) : (
+          <Login />
+        )}
+      </div>
+    </Router>
   );
 }
 
