@@ -4,8 +4,9 @@
   left: 25%;
   width: 100vw;
 }
-.button {
-  color: #fff;
+
+span.rdrStaticRangeLabel {
+  color: black;
 }
 
 .search > h2 {

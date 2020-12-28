@@ -16,4 +16,6 @@
   border-radius: 30px;
   text-transform: inherit;
   margin: 5px;
+  /* width: -1%; */
+  width: auto;
 }
