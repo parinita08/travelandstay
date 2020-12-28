@@ -45,6 +45,10 @@ span.rdrStaticRangeLabel {
   width: 559px;
 }
 
+.rdrDayHovered:hover {
+  background-color: transparent;
+}
+
 .search > button:hover {
   background-color: white;
   color: #ff7779;
