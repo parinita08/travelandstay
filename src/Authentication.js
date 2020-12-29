@@ -3,7 +3,7 @@ import firebase from './firebase';
 import './Login.css';
 
 const Authentication = () => {
-    const [user, setUser] = useState("");
+    const [user, setUser] = useState();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [emailError, setEmailError] = useState("");

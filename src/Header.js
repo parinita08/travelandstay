@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./Header.css";
 import { AuthenticationContext } from "./AuthenticationContext";
 import SearchIcon from "@material-ui/icons/Search";
@@ -6,9 +6,15 @@ import LanguageIcon from "@material-ui/icons/Language";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { Avatar } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import { SearchBox, Search, SearchInput } from './SearchIcon';
+import Fuse from 'fuse.js'
+import data from './data/search.json'
 
-function Header() {
+
+function Header({searchTerm , setSearchTerm}) {
   const { handleLogout } = useContext(AuthenticationContext);
+ 
+
 
   return (
     <div className="header">
@@ -20,10 +26,11 @@ function Header() {
         />
       </Link>
 
-      <div className="header__center">
+      {/* <SearchBox  searchTerm={searchTerm} setSearchTerm={setSearchTerm}/> */}
+      {/* <div className="header__center">
         <input type="text" />
         <SearchIcon />
-      </div>
+      </div> */}
 
       <div className="header__right">
         <p>Become a host</p>
@@ -35,5 +42,6 @@ function Header() {
     </div>
   );
 }
+
 
 export default Header;
