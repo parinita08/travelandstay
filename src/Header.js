@@ -33,7 +33,7 @@ function Header({searchTerm , setSearchTerm}) {
       </div> */}
 
       <div className="header__right">
-        <p>Become a host</p>
+      <p><a href="mailto:here@travelandstay.com">Become a host</a></p>
         {/* <LanguageIcon /> */}
         {/* <ExpandMoreIcon /> */}
         {/* <Avatar /> */}
